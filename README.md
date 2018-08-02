@@ -1,8 +1,6 @@
 # SvgCharts
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/svg_charts`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+SvgCharts gem is a wrapper around rubyvis gem which allows you to create charts
 
 ## Installation
 
@@ -22,7 +20,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+# available keys: values, width, height, height, padding, bars_padding, bars_colors
+SvgCharts::BarTimelineChart.new(data).render
+```
+
+```
+# available keys: values, width, height, height, padding, bars_padding, bars_colors
+SvgCharts::GroupedBarTimelineChart.new(data).render
+```
+
+```
+# available keys: values, width, height, height, padding, bars_padding, bars_colors
+SvgCharts::StackedBarTimelineChart.new(data).render
+```
+
+```
+# available keys: values, width, height, height, padding, bars_padding, lines_colors
+SvgCharts::LineTimelineChart.new(data).render
+```
+
+```
+# available keys: values, width, height, height, padding, bars_padding, areas_colors
+SvgCharts::AreaTimelineChart.new(data).render
+```
+You can use keys dates, marks, y_scale_max, numbers_formatter, numbers_color, numbers_font, title_text, title_color, title_font, dates_formatter, dates_color, dates_font, marks_color, rules_color, rules_count, weekend_bar_color, timeline_width_ratio, dates_height_ratio, marks_height_ratio, legend_titles, legend_colors, legend_text_color, legend_font, legend_shape, legend_chars, custom_legend_offset, threshold_number, threshold_color, threshold_width, threshold_caption
+for all timeline charts
+
+```
+# available keys: cones_colors, outer_radius, inner_radius, percentage_key
+SvgCharts::DonatChart.new(data).render
+```
+
 
 ## Development
 
