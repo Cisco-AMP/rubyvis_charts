@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    svg_charts (0.1.0)
+    svg_charts (0.1.1)
 
 GEM
   remote: https://rubygems.org/
