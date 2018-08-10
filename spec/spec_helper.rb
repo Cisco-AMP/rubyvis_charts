@@ -1,6 +1,6 @@
 require "bundler/setup"
 require 'shared_examples'
-require "svg_charts"
+require "rubyvis_charts"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

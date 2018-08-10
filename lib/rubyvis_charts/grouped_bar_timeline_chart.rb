@@ -1,4 +1,4 @@
-module SvgCharts
+module RubyvisCharts
   class GroupedBarTimelineChart < AbstractTimelineChart
     module DefaultArguments
       BARS_PADDING = Padding.new(right: 0.5, left: 0.5)

@@ -1,0 +1,12 @@
+require 'active_support/time'
+require 'rubyvis'
+require 'nokogiri'
+require "rubyvis_charts/version"
+require "rubyvis_charts/abstract_chart"
+require "rubyvis_charts/abstract_timeline_chart"
+require "rubyvis_charts/area_timeline_chart"
+require "rubyvis_charts/bar_timeline_chart"
+require "rubyvis_charts/donat_chart"
+require "rubyvis_charts/grouped_bar_timeline_chart"
+require "rubyvis_charts/line_timeline_chart"
+require "rubyvis_charts/stacked_bar_timeline_chart"

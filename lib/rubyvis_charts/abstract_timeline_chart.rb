@@ -1,4 +1,4 @@
-module SvgCharts
+module RubyvisCharts
   class AbstractTimelineChart < AbstractChart
     module DefaultArguments
       Y_SCALE_MAX = nil

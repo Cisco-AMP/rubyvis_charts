@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    svg_charts (0.1.1)
+    rubyvis_charts (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -50,7 +50,7 @@ DEPENDENCIES
   rake (~> 10.0)
   rspec (~> 3.0)
   rubyvis (= 0.6.1)
-  svg_charts!
+  rubyvis_charts!
 
 BUNDLED WITH
    1.16.3

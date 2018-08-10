@@ -1,6 +1,6 @@
 require_relative 'padding'
 
-module SvgCharts
+module RubyvisCharts
   class AbstractChart
     module DefaultArguments
       WIDTH = 400

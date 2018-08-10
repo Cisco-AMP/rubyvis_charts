@@ -1,4 +1,4 @@
-module SvgCharts
+module RubyvisCharts
   class AreaTimelineChart < AbstractTimelineChart
     module DefaultArguments
       AREAS_COLORS = %w[#4d79da #31d49e].freeze
