@@ -1,4 +1,4 @@
-module SvgCharts
+module RubyvisCharts
   class AbstractTimelineChart < AbstractChart
     module DefaultArguments
       Y_SCALE_MAX = nil
@@ -12,6 +12,8 @@ module SvgCharts
       DATES_COLOR = '#000000'.freeze
       DATES_FONT = '10px sans-serif'.freeze
       MARKS = [].freeze
+      MARKS_FORMATTER = ->(string) { string }
+      MARKS_FONT = '10px sans-serif'.freeze
       MARKS_COLOR = '#000000'.freeze
       RULES_COLOR = '#dfdfdf'.freeze
       RULES_COUNT = 5
@@ -33,13 +35,12 @@ module SvgCharts
 
     EXTRA_WEEKEND_BARS_WIDTH = 0.2
     TITLE_TOP_INDENT = -15
-    MARKS_FONT = '5px sans-serif'.freeze
 
     attr_reader :dates, :marks,
                 :y_scale_max, :numbers_formatter, :numbers_color, :numbers_font,
                 :title_text, :title_color, :title_font,
                 :dates_formatter, :dates_color, :dates_font,
-                :marks_color,
+                :marks_color, :marks_formatter, :marks_font,
                 :rules_color, :rules_count,
                 :weekend_bar_color,
                 :timeline_width_ratio, :dates_height_ratio, :marks_height_ratio,
@@ -62,6 +63,8 @@ module SvgCharts
       dates_color: DefaultArguments::DATES_COLOR,
       dates_font: DefaultArguments::DATES_FONT,
       marks_color: DefaultArguments::MARKS_COLOR,
+      marks_font: DefaultArguments::MARKS_FONT,
+      marks_formatter: DefaultArguments::MARKS_FORMATTER,
       rules_color: DefaultArguments::RULES_COLOR,
       rules_count: DefaultArguments::RULES_COUNT,
       weekend_bar_color: DefaultArguments::WEEKEND_BAR_COLOR,
@@ -95,6 +98,8 @@ module SvgCharts
       @dates_formatter = dates_formatter
       @dates_color = dates_color
       @marks_color = marks_color
+      @marks_formatter = marks_formatter
+      @marks_font = marks_font
       @rules_color = rules_color
       @rules_count = rules_count
       @weekend_bar_color = weekend_bar_color
@@ -308,7 +313,12 @@ module SvgCharts
         .width(marks_range.range_band)
         .left(label_left_indent)
 
-      warning_mark(marks_panels, bottom: 7, left: 1)
+      marks_panels.add(Rubyvis::Label)
+        .text(marks_formatter)
+        .textAlign('center')
+        .textBaseline('middle')
+        .font(marks_font)
+        .textStyle(marks_color)
     end
 
     def initialize_threshold!
@@ -354,7 +364,15 @@ module SvgCharts
           .fillStyle(legend_color)
           .strokeStyle(legend_color)
       else
-        warning_mark(legend_panels, bottom: 2, left: 1, mark_color: legend_color)
+        legend_char = -> { chart.send(:legend_chars)[self.parent.index] }
+
+        legend_panels.add(Rubyvis::Label)
+          .text(legend_char)
+          .left(-3)
+          .textAlign('left')
+          .textStyle(legend_color)
+          .textBaseline('middle')
+          .font(legend_font)
       end
 
       legend_panels.add(Rubyvis::Label)
@@ -418,29 +436,6 @@ module SvgCharts
 
     def bars_colors_iterator(index, height, colors)
       colors[index % colors.length] if height.nonzero?
-    end
-
-    def warning_mark(panel, bottom: 0, left: 0, width: 8, height: 6.5, mark_color: marks_color)
-      first_point = [bottom, left]
-      second_point = [height + bottom, width / 2 + left]
-      third_point = [bottom, width + left]
-      coordinates = [first_point, second_point, third_point, first_point, second_point]
-
-      panel.add(Rubyvis::Line)
-        .data(coordinates)
-        .bottom(->(d) { d.first })
-        .left(->(d) { d.last })
-        .lineWidth(0.6)
-        .strokeStyle(mark_color)
-
-      panel.add(Rubyvis::Label)
-        .text('!')
-        .left(1)
-        .textAlign('left')
-        .textStyle(mark_color)
-        .textBaseline('middle')
-        .font(MARKS_FONT)
-        .font_weight('bold')
     end
   end
 end

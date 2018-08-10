@@ -2,7 +2,7 @@ RSpec.shared_examples :abstract_chart do
   let(:values) { [1, 2, 3, 4, 5, 6, 7, 8] }
   let(:width) { 200 }
   let(:height) { 150 }
-  let(:padding) { SvgCharts::Padding.new(top: 5, right: 10, bottom: 15, left: 20 ) }
+  let(:padding) { RubyvisCharts::Padding.new(top: 5, right: 10, bottom: 15, left: 20 ) }
 
   let(:abstract_chart_args) { { values: values, width: width, height: height, padding: padding } }
 

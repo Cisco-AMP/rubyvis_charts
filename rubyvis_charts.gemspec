@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "svg_charts/version"
+require "rubyvis_charts/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "svg_charts"
-  spec.version       = SvgCharts::VERSION
+  spec.name          = "rubyvis_charts"
+  spec.version       = RubyvisCharts::VERSION
   spec.authors       = ["Andriy Solonyna"]
   spec.email         = ["asolonyn@cisco.com"]
 
   spec.summary       = "Svg charts"
   spec.description   = "Svg charts"
-  spec.homepage      = "https://code.engine.sourcefire.com/asolonyn/svg_charts"
+  spec.homepage      = "https://code.engine.sourcefire.com/asolonyn/rubyvis_charts"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

@@ -1,4 +1,4 @@
-module SvgCharts
+module RubyvisCharts
   class LineTimelineChart < AbstractTimelineChart
     module DefaultArguments
       LINES_COLORS = %w[#4d79da #31d49e].freeze

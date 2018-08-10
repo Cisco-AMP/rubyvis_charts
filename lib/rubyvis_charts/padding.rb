@@ -1,4 +1,4 @@
-module SvgCharts
+module RubyvisCharts
   class Padding
     DEFAULT_PADDING = 0
 
