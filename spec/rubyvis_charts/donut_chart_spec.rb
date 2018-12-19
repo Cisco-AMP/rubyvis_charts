@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RubyvisCharts::DonatChart do
+describe RubyvisCharts::DonutChart do
   include_examples :abstract_chart
   let(:bars_padding) { RubyvisCharts::Padding.new(left: 22) }
 
