@@ -1,5 +1,5 @@
 module RubyvisCharts
-  class DonatChart < AbstractChart
+  class DonutChart < AbstractChart
     module DefaultArguments
       CONES_COLORS = ["#cf2030", "#F73000", "#ffcc00", "#64bbe3", "#6cc04a", "#f2f2f2"].freeze
 
