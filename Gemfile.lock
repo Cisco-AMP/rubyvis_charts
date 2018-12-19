@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubyvis_charts (0.1.1)
+    rubyvis_charts (0.1.2)
       activesupport
       rubyvis (~> 0.6.1)
 
