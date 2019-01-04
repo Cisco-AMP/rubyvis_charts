@@ -21,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
 ### BarTimelineChart
-```
+```ruby
 data = {
   :legend_titles => ["Value1", "Value2"],
   :values => [81000, 67000, 287000, 174000, 217000, 185000, 280000, 230000, 219000, 138000, 93000, 74000, 89000, 67000],
@@ -46,7 +46,7 @@ RubyvisCharts::BarTimelineChart.new(data).render
 
 
 ### GroupedBarTimelineChart
-```
+```ruby
 data = {
   :legend_titles => ["Value1", "Value2"],
   :values => [81000, 67000, 287000, 174000, 217000, 185000, 280000, 230000, 219000, 138000, 93000, 74000, 89000, 67000],
@@ -69,7 +69,7 @@ RubyvisCharts::GroupedBarTimelineChart.new(data).render
 </p>
 
 ### StackedBarTimelineChart
-```
+```ruby
 data = {
   :legend_titles=>["Value1", "Value2"],
   :values=>[[5310, 2000, 9760, 2100, 7700, 6140, 9070], [106, 700, 41, 249, 800, 700, 44]],
@@ -92,7 +92,7 @@ RubyvisCharts::StackedBarTimelineChart.new(data).render
 </p>
 
 ### LineTimelineChart
-```
+```ruby
 data = {
   :legend_titles=>["Value"],
   :legend_colors=>["#83c9e9"],
@@ -112,7 +112,7 @@ RubyvisCharts::LineTimelineChart.new(data).render
 </p>
 
 ### AreaTimelineChart
-```
+```ruby
 data = {
   :areas_colors=>["#8CB2D4", "#14a792"],
   :dates_height_ratio=>0.1,
@@ -135,7 +135,7 @@ You can use keys dates, marks, y_scale_max, numbers_formatter, numbers_color, nu
 for all timeline charts
 
 ### DonutChart
-```
+```ruby
 data = {
   :values=>[{percentage: 0.18906606},
             {percentage: 0.05694761},
