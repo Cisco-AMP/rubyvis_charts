@@ -41,7 +41,7 @@ RubyvisCharts::BarTimelineChart.new(data).render
 ```
 
 <p align="center">
-  <img src ="/images/BarTimelineChart.png" width="300"/>
+  <img src ="/images/BarTimelineChart.png" width="450"/>
 </p>
 
 
@@ -65,7 +65,7 @@ data = {
 RubyvisCharts::GroupedBarTimelineChart.new(data).render
 ```
 <p align="center">
-  <img src ="/images/GroupedBarTimelineChart.png" width="300"/>
+  <img src ="/images/GroupedBarTimelineChart.png" width="450"/>
 </p>
 
 ### StackedBarTimelineChart
@@ -88,7 +88,7 @@ data = {
 RubyvisCharts::StackedBarTimelineChart.new(data).render
 ```
 <p align="center">
-  <img src ="/images/StackedBarTimelineChart.png" width="300"/>
+  <img src ="/images/StackedBarTimelineChart.png" width="450"/>
 </p>
 
 ### LineTimelineChart
@@ -108,7 +108,7 @@ data = {
 RubyvisCharts::LineTimelineChart.new(data).render
 ```
 <p align="center">
-  <img src ="/images/LineTimelineChart.png" width="300"/>
+  <img src ="/images/LineTimelineChart.png" width="450"/>
 </p>
 
 ### AreaTimelineChart
@@ -128,7 +128,7 @@ data = {
 RubyvisCharts::AreaTimelineChart.new(data).render
 ```
 <p align="center">
-  <img src ="/images/AreaTimelineChart.png" width="300"/>
+  <img src ="/images/AreaTimelineChart.png" width="450"/>
 </p>
 
 You can use keys dates, marks, y_scale_max, numbers_formatter, numbers_color, numbers_font, title_text, title_color, title_font, dates_formatter, dates_color, dates_font, marks_color, rules_color, rules_count, weekend_bar_color, timeline_width_ratio, dates_height_ratio, marks_height_ratio, legend_titles, legend_colors, legend_text_color, legend_font, legend_shape, legend_chars, custom_legend_offset, threshold_number, threshold_color, threshold_width, threshold_caption
@@ -153,7 +153,7 @@ data = {
 RubyvisCharts::DonutChart.new(data).render
 ```
 <p align="center">
-  <img src ="/images/DonutChart.png" width="150"/>
+  <img src ="/images/DonutChart.png" width="200"/>
 </p>
 
 
