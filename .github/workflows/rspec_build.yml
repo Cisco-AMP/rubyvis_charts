@@ -1,4 +1,4 @@
-name: rspec_build_check
+name: rspec_build
 on:
   pull_request:
     branches:
