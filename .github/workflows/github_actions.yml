@@ -1,0 +1,19 @@
+name: rspec_build_check
+
+on:
+  pull_request:
+    branches:
+      - test
+
+jobs:
+  test:
+    name: Run gemspec
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7 # Not needed with a .ruby-version file
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - run: bundle exec rspec
