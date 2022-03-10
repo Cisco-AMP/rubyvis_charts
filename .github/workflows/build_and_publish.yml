@@ -1,0 +1,39 @@
+name: build_and_publish
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+jobs:
+  build:
+    strategy:
+      fail-fast: true
+    name: build and publish gem
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+      - name: set up ruby 2.7
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+      - run: bundle install
+      - name: version check
+        run: |
+          export GEM_VERSION=$(ruby -e "require 'rubygems'; puts Gem::Specification::load('${{github.event.repository.name}}.gemspec').version")
+          if [ "v$GEM_VERSION" != "${{github.ref_name}}" ] ; then
+            echo "Pushed git tag '${{github.ref_name}}' does not match gem version 'v{gem_version}', expected: 'v$GEM_VERSION'"
+            exit 1
+          fi
+      - name: publish to rubygems
+        run: |
+          mkdir -p $HOME/.gem
+          touch $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+          gem build *.gemspec
+          gem push *.gem
+        env:
+          GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
