@@ -14,12 +14,16 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v2
-      - name: set up ruby 2.7
-      - uses: ruby/setup-ruby@v1
+
+      - name: setup ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
           bundler-cache: true
-      - run: bundle install
+
+      - name: install gems
+        run: bundle install
+
       - name: version check
         run: |
           export GEM_VERSION=$(ruby -e "require 'rubygems'; puts Gem::Specification::load('${{github.event.repository.name}}.gemspec').version")
@@ -27,6 +31,7 @@ jobs:
             echo "Pushed git tag '${{github.ref_name}}' does not match gem version 'v{gem_version}', expected: 'v$GEM_VERSION'"
             exit 1
           fi
+
       - name: publish to rubygems
         run: |
           mkdir -p $HOME/.gem
