@@ -1,4 +1,5 @@
 require 'active_support/time'
+require 'securerandom'
 require 'rubyvis'
 require 'nokogiri'
 require "rubyvis_charts/version"
