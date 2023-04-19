@@ -12,7 +12,7 @@ module RubyvisCharts
       bars_colors: DefaultArguments::BARS_COLORS,
       **other
     )
-      super(other)
+      super(**other)
 
       @bars_padding = bars_padding
       @bars_colors = bars_colors

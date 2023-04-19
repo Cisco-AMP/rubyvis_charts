@@ -13,7 +13,7 @@ module RubyvisCharts
       areas_colors: DefaultArguments::AREAS_COLORS,
       **other
     )
-      super(other)
+      super(**other)
 
       @areas_colors = areas_colors
 

@@ -13,7 +13,7 @@ module RubyvisCharts
       lines_colors: DefaultArguments::LINES_COLORS,
       **other
     )
-      super(other)
+      super(**other)
       @lines_colors = lines_colors
       initialize_lines!
     end

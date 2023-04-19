@@ -84,7 +84,7 @@ module RubyvisCharts
       threshold_caption: DefaultArguments::THRESHOLD_CAPTION,
       **other
     )
-      super(other)
+      super(**other)
 
       @dates = dates
       @marks = marks
