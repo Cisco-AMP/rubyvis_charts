@@ -15,7 +15,7 @@ module RubyvisCharts
       percentage_key: :percentage,
       **other
     )
-      super(other)
+      super(**other)
       @outer_radius = outer_radius
       @inner_radius = inner_radius
       @cones_colors = cones_colors
